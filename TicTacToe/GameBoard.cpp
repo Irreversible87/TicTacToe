@@ -36,7 +36,7 @@ void GameBoard::renderGameBoard()
 	}
 }
 
-void GameBoard::makeTurn(Player playerOne, Player playerTwo)
+void GameBoard::makeMove(Player playerOne, Player playerTwo)
 {
 	if (turn == playerOne.getPlayerSymbol())
 		choice = playerOne.playerTurn();

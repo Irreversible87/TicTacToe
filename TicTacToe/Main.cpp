@@ -17,7 +17,7 @@ int main()
 
 	while (!gameBoard.gameOver())
 	{
-		gameBoard.makeTurn(playerOne, playerTwo);
+		gameBoard.makeMove(playerOne, playerTwo);
 	}
 
 	return 0;

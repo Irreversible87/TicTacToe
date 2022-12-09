@@ -10,7 +10,7 @@ public:
 	GameBoard();
 	void setTurn(char symbol);
 	void renderGameBoard();
-	void makeTurn(Player playerOne, Player playerTwo);
+	void makeMove(Player playerOne, Player playerTwo);
 	bool gameOver();
 
 private:
