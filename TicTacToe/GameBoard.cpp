@@ -5,6 +5,10 @@ using namespace std;
 
 GameBoard::GameBoard()
 {
+	choice = NULL;
+	column = NULL;
+	row = NULL;
+	turn = NULL;
 }
 
 void GameBoard::setTurn(char symbol)
