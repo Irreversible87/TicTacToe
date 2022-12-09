@@ -100,13 +100,15 @@ bool GameBoard::gameOver()
 
 void GameBoard::updateGameBoard(Player playerX, Player playerO)
 {
-	if (turn == playerX.getPlayerSymbol() && gameBoard[boardRow][boardColumn] != 'X' && gameBoard[boardRow][boardColumn] != 'O')
+	if (turn == playerX.getPlayerSymbol() && gameBoard[boardRow][boardColumn] != 'X' 
+		&& gameBoard[boardRow][boardColumn] != 'O')
 	{
 		gameBoard[boardRow][boardColumn] = playerX.getPlayerSymbol();
 		turn = playerO.getPlayerSymbol();
 		renderGameBoard();
 	}
-	else if (turn == playerO.getPlayerSymbol() && gameBoard[boardRow][boardColumn] != 'X' && gameBoard[boardRow][boardColumn] != 'O')
+	else if (turn == playerO.getPlayerSymbol() && gameBoard[boardRow][boardColumn] != 'X' 
+		&& gameBoard[boardRow][boardColumn] != 'O')
 	{
 		gameBoard[boardRow][boardColumn] = playerO.getPlayerSymbol();
 		turn = playerX.getPlayerSymbol();
