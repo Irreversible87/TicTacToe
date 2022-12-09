@@ -3,15 +3,26 @@
 
 GameBoard::GameBoard()
 {
-	choice = NULL;
-	column = NULL;
-	row = NULL;
+	playerChoosenField = NULL;
+	boardColumn = NULL;
+	boardRow = NULL;
 	turn = NULL;
+	bIsDraw = false;
 }
 
 void GameBoard::setTurn(char symbol)
 {
 	turn = symbol;
+}
+
+char GameBoard::getTurn()
+{
+	return turn;
+}
+
+bool GameBoard::getDraw()
+{
+	return bIsDraw;
 }
 
 void GameBoard::renderGameBoard()
@@ -34,26 +45,26 @@ void GameBoard::renderGameBoard()
 	}
 }
 
-void GameBoard::makeMove(Player playerOne, Player playerTwo)
+void GameBoard::play(Player playerOne, Player playerTwo)
 {
 	if (turn == playerOne.getPlayerSymbol())
-		choice = playerOne.playerTurn();
+		playerChoosenField = playerOne.playerTurn();
 	else
-		choice = playerTwo.playerTurn();
+		playerChoosenField = playerTwo.playerTurn();
 
-	switch (choice)
+	switch (playerChoosenField)
 	{
-	case 1: row = 0; column = 0; break;
-	case 2: row = 0; column = 1; break;
-	case 3: row = 0; column = 2; break;
-	case 4: row = 1; column = 0; break;
-	case 5: row = 1; column = 1; break;
-	case 6: row = 1; column = 2; break;
-	case 7: row = 2; column = 0; break;
-	case 8: row = 2; column = 1; break;
-	case 9: row = 2; column = 2; break;
+	case 1: boardRow = 0; boardColumn = 0; break;
+	case 2: boardRow = 0; boardColumn = 1; break;
+	case 3: boardRow = 0; boardColumn = 2; break;
+	case 4: boardRow = 1; boardColumn = 0; break;
+	case 5: boardRow = 1; boardColumn = 1; break;
+	case 6: boardRow = 1; boardColumn = 2; break;
+	case 7: boardRow = 2; boardColumn = 0; break;
+	case 8: boardRow = 2; boardColumn = 1; break;
+	case 9: boardRow = 2; boardColumn = 2; break;
 	default:
-		std::cout << "Please choose only between 1 and 9!";
+		std::cout << "Please choose only between 1 and 9! \n";
 	}
 	updateGameBoard(playerOne, playerTwo);
 }
@@ -81,28 +92,29 @@ bool GameBoard::gameOver()
 		for (int j = 0; j < 3; j++)
 			if (gameBoard[i][j] != 'X' && gameBoard[i][j] != 'O')
 				return false;
+
+	// Checking if game is a draw.
+	bIsDraw = true;
+	return true;
 }
 
-// Der hier macht nicht was er soll
 void GameBoard::updateGameBoard(Player playerOne, Player playerTwo)
 {
-	if (turn == playerOne.getPlayerSymbol() && gameBoard[row][column] != 'X' && gameBoard[row][column] != 'O')
+	if (turn == playerOne.getPlayerSymbol() && gameBoard[boardRow][boardColumn] != 'X' && gameBoard[boardRow][boardColumn] != 'O')
 	{
-		gameBoard[row][column] = playerOne.getPlayerSymbol();
+		gameBoard[boardRow][boardColumn] = playerOne.getPlayerSymbol();
 		turn = playerTwo.getPlayerSymbol();
+		renderGameBoard();
 	}
-	else if (turn == playerTwo.getPlayerSymbol() && gameBoard[row][column] != 'X' && gameBoard[row][column] != 'O')
+	else if (turn == playerTwo.getPlayerSymbol() && gameBoard[boardRow][boardColumn] != 'X' && gameBoard[boardRow][boardColumn] != 'O')
 	{
-		gameBoard[row][column] = playerTwo.getPlayerSymbol();
+		gameBoard[boardRow][boardColumn] = playerTwo.getPlayerSymbol();
 		turn = playerOne.getPlayerSymbol();
+		renderGameBoard();
 	}
 	else
 	{
 		std::cout << "Box is already taken. Choose another one!" << std::endl;
-		if (turn == playerOne.getPlayerSymbol())
-			playerOne.playerTurn();
-		else if (turn == playerTwo.getPlayerSymbol())
-			playerTwo.playerTurn();
+		play(playerOne, playerTwo);
 	}
-	renderGameBoard();
 }

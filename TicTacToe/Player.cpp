@@ -1,10 +1,10 @@
 #include <iostream>
 #include "Player.h"
 
-Player::Player(char symbol)
+Player::Player(char playerSymbol)
 {
-	playerChoice = NULL;
-	playerSymbol = symbol;
+	choosenField = NULL;
+	this->playerSymbol = playerSymbol;
 }
 
 char Player::getPlayerSymbol()
@@ -15,8 +15,9 @@ char Player::getPlayerSymbol()
 int Player::playerTurn()
 {
 	std::cout << "Choose your field (1-9): ";
-	std::cin >> playerChoice;
-	return playerChoice;
+	std::cin >> choosenField;
+
+	return 	choosenField;
 }
 
 

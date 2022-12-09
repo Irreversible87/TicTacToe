@@ -11,7 +11,7 @@ public:
 	int playerTurn();
 
 private:
-	int playerChoice;
+	int choosenField;
 	char playerSymbol;
 };
 
