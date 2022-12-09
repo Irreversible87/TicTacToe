@@ -1,7 +1,5 @@
 #include <iostream>
-#include "Main.h"
-
-using namespace std;
+#include "Player.h"
 
 int main()
 {
@@ -13,7 +11,7 @@ int main()
 
 	gameBoard.renderGameBoard();
 	
-	cout << endl;
+	std::cout << std::endl;
 
 	while (!gameBoard.gameOver())
 	{

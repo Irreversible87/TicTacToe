@@ -1,8 +1,6 @@
 #include <iostream>
 #include "GameBoard.h"
 
-using namespace std;
-
 GameBoard::GameBoard()
 {
 	choice = NULL;
@@ -20,19 +18,19 @@ void GameBoard::renderGameBoard()
 {
 	for (int i = 0; i <= 2; i++)
 	{
-		cout << "\t\t     |     |     \n\t\t  ";
+		std::cout << "\t\t     |     |     \n\t\t  ";
 		for (int j = 0; j <= 2; j++)
 		{
 			if (j < 2)
-				cout << gameBoard[i][j] << "  |  ";
+				std::cout << gameBoard[i][j] << "  |  ";
 			else
-				cout << gameBoard[i][j];
+				std::cout << gameBoard[i][j];
 		}
-		cout << " \n";
+		std::cout << " \n";
 		if (i < 2)
-			cout << "\t\t_____|_____|_____\n";
+			std::cout << "\t\t_____|_____|_____\n";
 		else
-			cout << "\t\t     |     |     \n";
+			std::cout << "\t\t     |     |     \n";
 	}
 }
 
@@ -55,7 +53,7 @@ void GameBoard::makeMove(Player playerOne, Player playerTwo)
 	case 8: row = 2; column = 1; break;
 	case 9: row = 2; column = 2; break;
 	default:
-		cout << "Please choose only between 1 and 9!";
+		std::cout << "Please choose only between 1 and 9!";
 	}
 	updateGameBoard(playerOne, playerTwo);
 }
@@ -100,7 +98,7 @@ void GameBoard::updateGameBoard(Player playerOne, Player playerTwo)
 	}
 	else
 	{
-		cout << "Box is already taken. Choose another one!" << endl;
+		std::cout << "Box is already taken. Choose another one!" << std::endl;
 		if (turn == playerOne.getPlayerSymbol())
 			playerOne.playerTurn();
 		else if (turn == playerTwo.getPlayerSymbol())
