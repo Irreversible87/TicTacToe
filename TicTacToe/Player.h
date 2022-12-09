@@ -14,4 +14,3 @@ private:
 	int choosenField;
 	char playerSymbol;
 };
-

@@ -4,8 +4,8 @@
 GameBoard::GameBoard()
 {
 	playerChoosenField = NULL;
-	boardColumn = NULL;
 	boardRow = NULL;
+	boardColumn = NULL;
 	turn = NULL;
 	bIsDraw = false;
 }
@@ -98,23 +98,23 @@ bool GameBoard::gameOver()
 	return true;
 }
 
-void GameBoard::updateGameBoard(Player playerOne, Player playerTwo)
+void GameBoard::updateGameBoard(Player playerX, Player playerO)
 {
-	if (turn == playerOne.getPlayerSymbol() && gameBoard[boardRow][boardColumn] != 'X' && gameBoard[boardRow][boardColumn] != 'O')
+	if (turn == playerX.getPlayerSymbol() && gameBoard[boardRow][boardColumn] != 'X' && gameBoard[boardRow][boardColumn] != 'O')
 	{
-		gameBoard[boardRow][boardColumn] = playerOne.getPlayerSymbol();
-		turn = playerTwo.getPlayerSymbol();
+		gameBoard[boardRow][boardColumn] = playerX.getPlayerSymbol();
+		turn = playerO.getPlayerSymbol();
 		renderGameBoard();
 	}
-	else if (turn == playerTwo.getPlayerSymbol() && gameBoard[boardRow][boardColumn] != 'X' && gameBoard[boardRow][boardColumn] != 'O')
+	else if (turn == playerO.getPlayerSymbol() && gameBoard[boardRow][boardColumn] != 'X' && gameBoard[boardRow][boardColumn] != 'O')
 	{
-		gameBoard[boardRow][boardColumn] = playerTwo.getPlayerSymbol();
-		turn = playerOne.getPlayerSymbol();
+		gameBoard[boardRow][boardColumn] = playerO.getPlayerSymbol();
+		turn = playerX.getPlayerSymbol();
 		renderGameBoard();
 	}
 	else
 	{
 		std::cout << "Box is already taken. Choose another one!" << std::endl;
-		play(playerOne, playerTwo);
+		play(playerX, playerO);
 	}
 }

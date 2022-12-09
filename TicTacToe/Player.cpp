@@ -14,10 +14,9 @@ char Player::getPlayerSymbol()
 
 int Player::playerTurn()
 {
+	std::cout << "Your Turn Player " << getPlayerSymbol() << std::endl;
 	std::cout << "Choose your field (1-9): ";
 	std::cin >> choosenField;
 
 	return 	choosenField;
 }
-
-

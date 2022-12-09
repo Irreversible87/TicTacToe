@@ -4,29 +4,27 @@
 int main()
 {
 	GameBoard gameBoard;
-	Player playerOne('X');
-	Player playerTwo('O');
+	Player playerX('X');
+	Player playerO('O');
 
-	gameBoard.setTurn(playerOne.getPlayerSymbol());
+	gameBoard.setTurn(playerX.getPlayerSymbol());
 	
 	std::cout << std::endl;
-	std::cout << "\t\t***********TicTacToe***********\n" << std::endl;
-	std::cout << "\t\tPlayer 1: X | Player 2: O\n" << std::endl;
+	std::cout << "\t\t***********TicTacToe***********\n\n\n" << std::endl;
 
 	gameBoard.renderGameBoard();
 
 	while (!gameBoard.gameOver())
 	{
-		gameBoard.play(playerOne, playerTwo);
+		gameBoard.play(playerX, playerO);
 	}
 
 	if (gameBoard.getTurn() == 'O' && gameBoard.getDraw() == false)
-		std::cout << "\n\n Congrats. Player 1 has won!";
+		std::cout << "\n\n Congrats. Player X has won!";
 	else if (gameBoard.getTurn() == 'X' && gameBoard.getDraw() == false)
-		std::cout << "\n\n Congrats. Player 2 has won!";
+		std::cout << "\n\n Congrats. Player O has won!";
 	else
 		std::cout << "\n\n That is a Draw!";
 
 	return 0;
 }
-

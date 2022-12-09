@@ -12,7 +12,7 @@ public:
 	char getTurn();
 	bool getDraw();
 	void renderGameBoard();
-	void play(Player playerOne, Player playerTwo);
+	void play(Player playerX, Player playerO);
 	bool gameOver();
 
 private:
@@ -23,4 +23,3 @@ private:
 	
 	void updateGameBoard(Player playerOne, Player playerTwo);
 };
-
