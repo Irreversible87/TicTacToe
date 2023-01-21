@@ -20,11 +20,11 @@ int main()
 	}
 
 	if (gameBoard.getTurn() == 'O' && gameBoard.getDraw() == false)
-		std::cout << "\n\n Congrats. Player X has won!";
+		std::cout << "\n\n Congrats. Player X has won!" << std::endl;
 	else if (gameBoard.getTurn() == 'X' && gameBoard.getDraw() == false)
-		std::cout << "\n\n Congrats. Player O has won!";
+		std::cout << "\n\n Congrats. Player O has won!" << std::endl;
 	else
-		std::cout << "\n\n That is a Draw!";
+		std::cout << "\n\n That is a Draw!" << std::endl;
 
 	return 0;
 }

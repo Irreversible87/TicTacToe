@@ -1,0 +1,3 @@
+E:/Dokumente/FH Emden Leer/2022 - Medieninformatik Master/1. Semester/Moderne Softwareentwicklung/EA6 - Build Tools/Application/TicTacToe/Build1/CMakeFiles/TicTacToe.dir
+E:/Dokumente/FH Emden Leer/2022 - Medieninformatik Master/1. Semester/Moderne Softwareentwicklung/EA6 - Build Tools/Application/TicTacToe/Build1/CMakeFiles/ALL_BUILD.dir
+E:/Dokumente/FH Emden Leer/2022 - Medieninformatik Master/1. Semester/Moderne Softwareentwicklung/EA6 - Build Tools/Application/TicTacToe/Build1/CMakeFiles/ZERO_CHECK.dir

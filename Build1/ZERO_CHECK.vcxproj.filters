@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Dokumente\FH Emden Leer\2022 - Medieninformatik Master\1. Semester\Moderne Softwareentwicklung\EA6 - Build Tools\Application\TicTacToe\Build1\CMakeFiles\e394a41c4c91e106f23d5cb25ed6d2a7\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{79357766-CD1C-3670-A793-909CF55C5853}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
